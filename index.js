@@ -12,9 +12,22 @@ app.use(express.json());
 const PRIVATE_APP_ACCESS = process.env.PRIVATE_APP_ACCESS;
 const DRAGON_OBJECT_TYPE = '2-271387444';
 
-// TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
+app.get('/', async (req, res) => {
+    const dragons = `https://api.hubapi.com/crm/v3/objects/${DRAGON_OBJECT_TYPE}?properties=name,damage_type,mm_page&limit=100`;
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    };
 
-// * Code for Route 1 goes here
+    try {
+        const resp = await axios.get(dragons, { headers });
+        const data = resp.data.results;
+        res.render('homepage', { title: 'Dragons | Integrating With HubSpot I Practicum', data });
+    } catch (err) {
+        console.error(err.response?.data || err.message);
+        res.status(500).send('Failed to load dragons');
+    }
+});
 
 app.get('/update-cobj', (req, res) => {
     res.render('updates', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum' });
