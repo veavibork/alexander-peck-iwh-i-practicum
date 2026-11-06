@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href="/update-cobj") Add to this table
+        h1 Dragons
+        table
+            thead
+                tr
+                    th Name
+                    th Damage Type
+                    th MM Page
+            tbody
+                each dragon in data
+                    tr
+                        td= dragon.properties.name
+                        td= dragon.properties.damage_type
+                        td= dragon.properties.mm_page

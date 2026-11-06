@@ -4,7 +4,11 @@ This repository is for the Integrating With HubSpot I: Foundations course. This 
 
 To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/247910633/objects/2-271387444/views/all/list
+
+_Note: The app is named "Alexanders Practicum Private App" because HubSpot's developer platform does not allow apostrophes in app names._
+
+_The app was originally named "My Get Started app". Despite having renamed the app, the uploaded custom object records are still reflecting that name under "Record source detail 1". I left it as-is rather than running down the exact issue._
 
 ___
 ## Tips:
